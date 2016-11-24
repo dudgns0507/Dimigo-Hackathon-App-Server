@@ -3,8 +3,8 @@
   "name": "node-example",
   "version": "0.0.1",
   "dependencies": {
-    "body-parser": "^1.14.2",
-    "express": "~4.13.3",
+    "express":"*",
+    "body-parser":"*",
     "path": "~0.12.7"
   },
   "scripts": {
