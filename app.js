@@ -1,16 +1,14 @@
-var express = require('express');
+var http = require('http');
 
-var app = express();
+var hostname = 'https://dimigo-hackthon-app-server.herokuapp.com/';
+var port = 3000;
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+var server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
 });
 
-var port = process.env.PORT || 8080;
-app.listen(port, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
-
-app.get('/as', function(request, response) {
-  response.send('d');
+server.listen(port, hostname, () => {
+  console.log('Server running at http://${hostname}:${port}/');
 });
